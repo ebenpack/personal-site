@@ -15,6 +15,9 @@ USE_FOLDER_AS_CATEGORY = True
 DEFAULT_LANG = u'en'
 DEFAULT_DATE = u'fs'
 
+ARTICLE_URL = "posts/{slug}"
+ARTICLE_SAVE_AS = "posts/{slug}.html"
+
 THEME = "./pelican-themes/dev-random2"
 
 # Feed generation is usually not desired when developing
