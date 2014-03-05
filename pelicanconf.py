@@ -29,6 +29,23 @@ GOOGLE_ANALYTICS = "UA-48710000-1"
 GITHUB_URL = "https://github.com/ebenpack/ebenpack.github.io"
 SOCIAL = (('GitHub', 'https://github.com/ebenpack'),)
 
+PLUGIN_PATH = "plugins"
+PLUGINS=['sitemap',]
+
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
+    'changefreqs': {
+        'articles': 'monthly',
+        'indexes': 'daily',
+        'pages': 'monthly'
+    }
+}
+
 
 STATIC_PATHS = [
     'images',
