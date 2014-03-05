@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block headers %}
+{{ super() }}
+{% endblock headers %}
+
+{% block title %}{{ super() }} — Tags{% endblock title %}
+
+{%- block content %}
+      <h1>Tags</h1>
+      <ul id="tag-cloud">
+      {% for tag, articles in tags %}
+      <li data-count="{{ articles|count }}" title="{{ articles|count }} article(s)"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
+      {% endfor %}
+      </ul>
+{% endblock content -%}
