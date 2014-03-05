@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'ebenpack'
 SITENAME = u'Eben Packwood'
-SITEURL = ''
+SITEURL = 'http://www.ebenpackwood.com'
 
 OUTPUT_PATH = u'ebenpack.github.io'
 
