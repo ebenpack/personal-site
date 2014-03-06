@@ -6,6 +6,7 @@ Authors: ebenpack
 Status: hidden
 
 <div class="main" style="position:relative;">
+    <div width='600' height='240'></div>
     <canvas id="boltzmann" style="background-color: black; position: absolute;" width='600' height='240'></canvas>
     <canvas id="vectorcanvas" style="position: absolute; left: 0; pointer-events: none" width='600' height='240'></canvas>
     <canvas id="particlecanvas" style="position: absolute; left: 0; pointer-events: none" width='600' height='240'></canvas>
