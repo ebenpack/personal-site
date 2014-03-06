@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'ebenpack'
 SITENAME = u'Eben Packwood'
-SITEURL = 'http://www.ebenpackwood.com'
+SITEURL = ''
 
 OUTPUT_PATH = u'ebenpack.github.io'
 
@@ -15,7 +15,7 @@ USE_FOLDER_AS_CATEGORY = True
 DEFAULT_LANG = u'en'
 DEFAULT_DATE = u'fs'
 
-ARTICLE_URL = "posts/{slug}"
+ARTICLE_URL = "posts/{slug}.html"
 ARTICLE_SAVE_AS = "posts/{slug}.html"
 
 THEME = "./pelican-themes/dev-random2"
@@ -25,7 +25,6 @@ FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
-GOOGLE_ANALYTICS = "UA-48710000-1"
 GITHUB_URL = "https://github.com/ebenpack/ebenpack.github.io"
 SOCIAL = (('GitHub', 'https://github.com/ebenpack'),)
 
