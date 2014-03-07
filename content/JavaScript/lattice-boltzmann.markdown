@@ -670,7 +670,7 @@ In this example, the streamed values are placed in the special `node.stream` arr
                     var eq = equilibrium(ux, uy, rho);
                     for (var i = 0; i < 9; i++) {
                         var old_value = d[i];
-                        node.distribution[i] = old_value + (module.omega * (eq[i] - old_value));
+                        node.distribution[i] = old_value + (omega * (eq[i] - old_value));
                     }
                 }
             }
