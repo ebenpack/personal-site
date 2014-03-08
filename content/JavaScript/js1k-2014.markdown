@@ -1,7 +1,7 @@
-Title: Bytes!?! We don't need no stinkin' bytes!
+Title: Computational fluid dynamics in under 1K. How I made my JS1K entry.
 Tags: JavaScript, JS1K, Lattice Boltzmann
 Slug: wavybits
-Date: 2014-02-16 12:49
+Date: 2014-02-17 12:49
 Authors: ebenpack
 Description: The making of a JavaScript implementation of the lattice Boltmann method for the JS1K contest.
 Summary: The making of a JavaScript implementation of the lattice Boltmann method for the JS1K contest.
