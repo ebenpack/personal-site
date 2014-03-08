@@ -17,7 +17,6 @@ from codecs import open
 
 from pelican import signals, contents
 from pelican.utils import get_date
-
 TXT_HEADER = """{0}/index.html
 {0}/archives.html
 {0}/tags.html
@@ -206,8 +205,13 @@ class SitemapGenerator(object):
                                                'date',
                                                'url'])
 
-            for standard_page_url in ['index.html',
-                                      'archives.html',
+            home = FakePage(status='published',
+                                    date=self.now,
+                                    url='')
+
+            self.write_url(home, fd)
+
+            for standard_page_url in ['archives.html',
                                       'tags.html',
                                       'categories.html']:
                 fake = FakePage(status='published',
