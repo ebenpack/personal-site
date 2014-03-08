@@ -3,6 +3,7 @@ Slug: projects/lattice-boltzmann
 Tags: JavaScript
 Date: 2014-02-15 20:28
 Authors: ebenpack
+Description: An implementation of the lattice Boltzmann method with JavaScript.
 Status: hidden
 
 <div class="main" style="position:relative;">

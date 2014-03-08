@@ -3,7 +3,8 @@ Tags: JavaScript, Lattice Boltzmann
 Slug: lattice-boltzmann
 Date: 2014-02-16 12:49
 Authors: ebenpack
-Summary: Implementing the lattice Boltzmann method with JavaScript and canvas
+Description: Implementing the lattice Boltzmann method with JavaScript.
+Summary: Implementing the lattice Boltzmann method with JavaScript.
 
 <div style="height:0">
     <svg width="0" height="0">

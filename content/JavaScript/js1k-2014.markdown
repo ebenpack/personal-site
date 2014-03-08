@@ -3,7 +3,8 @@ Tags: JavaScript, JS1K, Lattice Boltzmann
 Slug: wavybits
 Date: 2014-02-16 12:49
 Authors: ebenpack
-Summary: Implementing the lattice Boltmann method in under 1K
+Description: The making of a JavaScript implementation of the lattice Boltmann method for the JS1K contest.
+Summary: The making of a JavaScript implementation of the lattice Boltmann method for the JS1K contest.
 
 _Being an attempt to write a computational fluid dynamics simulation using no more than two raised to the power ten bytes._
 

@@ -3,6 +3,7 @@ Slug: projects/js1k
 Tags: JavaScript
 Date: 2014-02-15 20:28
 Authors: ebenpack
+Description: An implementation of the lattice Boltzmann method with JavaScript for the JS1k contest.
 Status: hidden
 
 <canvas id="c" style="position: relative;"></canvas>

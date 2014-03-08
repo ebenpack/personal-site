@@ -3,6 +3,7 @@ Slug: projects/a-star
 Tags: JavaScript
 Date: 2014-02-15 20:28
 Authors: ebenpack
+Description: A* pathfinding made with JavaScript.
 Status: hidden
 
 <div class="main" style="position:relative;">
