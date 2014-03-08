@@ -29,7 +29,7 @@ GITHUB_URL = "https://github.com/ebenpack/ebenpack.github.io"
 SOCIAL = (('GitHub', 'https://github.com/ebenpack'),)
 
 PLUGIN_PATH = "plugins"
-PLUGINS=['sitemap',]
+PLUGINS = ['sitemap', 'assets', ]
 
 SITEMAP = {
     'format': 'xml',
@@ -50,11 +50,12 @@ STATIC_PATHS = [
     'images',
     'extra/CNAME',
     'extra/favicon.ico',
-    ]
+]
+
 EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
     'extra/favicon.ico': {'path': 'favicon.ico'},
-    }
+}
 
 DEFAULT_PAGINATION = 10
 
