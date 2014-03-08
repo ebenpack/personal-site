@@ -7,6 +7,7 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
     <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
     <!--[if lte IE 8]><script type="text/javascript" src="{{ SITEURL }}/theme/js/html5shiv.js"></script><![endif]-->
+    <link rel="canonical" href="{{SITEURL}}{% if output_file == "index.html" %}{% else %}/{{output_file}}{% endif %}" >
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/skeleton.css" />
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/theme.css" />
     <script src="{{ SITEURL }}/theme/js/modernizr.js"></script>
