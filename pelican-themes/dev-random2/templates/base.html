@@ -10,7 +10,7 @@
     <link rel="canonical" href="{{SITEURL}}{% if output_file == "index.html" %}{% else %}/{{output_file}}{% endif %}" >
     {% if PRODUCTION  %}
     {% assets filters="cssmin", output="css/style.min.css", "css/skeleton.css", "css/normalize.css", "css/theme.css" %}
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}{{ ASSET_URL }}" />
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ ASSET_URL }}" />
     {% endassets %}
     {% else %}
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/skeleton.css" />
