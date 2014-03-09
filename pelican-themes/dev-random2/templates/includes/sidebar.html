@@ -9,7 +9,7 @@
               <li{% if output_file == 'index.html' %} class="active"{% endif %}><a href="{{ SITEURL }}">Home</a></li>
               <li{% if output_file == 'categories.html' %} class="active"{% endif %}><a href="{{ SITEURL }}/categories.html">Categories</a></li>
               <li {% if output_file == 'archives.html' %} class="active"{% endif %}><a href="{{ SITEURL }}/archives.html">Archives</a></li>
-              <li{% if output_file == 'tags.html' %} class="active"{% endif %}><a href="{{ SITEURL }}/tags.html">Tags</a></li>
+              <li{% if output_file == 'tags.html' or tag %} class="active"{% endif %}><a href="{{ SITEURL }}/tags.html">Tags</a></li>
             {% if MENUITEMS %}
               {% for name, uri in MENUITEMS %}
               <li><a href="{{ uri|format(SITEURL)}}">{{ name }}</a></li>
