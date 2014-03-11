@@ -592,6 +592,8 @@ That more or less sums up the lattice Boltzmann method. Of course, it's very bro
 
 ## JavaScript Implementation ##
 
+You can view a demo [here]({filename}/projects/lattice-boltzmann.markdown).
+
 Implementation is not particularly difficult, once you understand the lattice Bolzman methods. At its most basic, the LBM requires a lattice of nodes. In this case, for D2Q9, a two-dimensional array suffices to represent our lattice (techincally, an array of length n, with each item consisting of an m length array, where n represents the width of the lattice, and m represents the height). For each node in the lattice, we must store, at a minimum, the densities of the DFs. It is also useful, in order to avoid repetition of work, to store the calculated macroscopic density, macroscopic velocity, the x and y components of that velocity, and the 'curl'. Additionally, a `barrier` boolean was stored on each node, as well as a `stream` array, used to temporarily store streamed values. Altogether, the constructor looked like this:
 
     #!javascript
