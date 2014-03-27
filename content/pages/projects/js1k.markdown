@@ -13,4 +13,4 @@ Status: hidden
   var c = a.getContext('2d');
   a.width = a.height = 600;
 </script>
-<script src="https://rawgithub.com/ebenpack/laboratory/master/JS/projectwavybits/wavybits-compiled.js"></script>
+<script src="{filename}/js/wavybits.js"></script>

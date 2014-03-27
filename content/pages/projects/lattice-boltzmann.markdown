@@ -37,4 +37,4 @@ Status: hidden
     </div>
     <div id="debug"></div>
 </div>
-<script src="https://rawgithub.com/ebenpack/laboratory/master/JS/boltzmann/js/boltzmann-min.js"></script>
+<script src="{filename}/js/boltzmann.js"></script>

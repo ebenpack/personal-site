@@ -29,7 +29,7 @@ GITHUB_URL = "https://github.com/ebenpack/ebenpack.github.io"
 SOCIAL = (('GitHub', 'https://github.com/ebenpack'),)
 
 PLUGIN_PATH = "plugins"
-PLUGINS = ['sitemap', 'assets', ]
+PLUGINS = ['sitemap', 'assets', 'githubfetch', ]
 
 SITEMAP = {
     'format': 'xml',
@@ -50,11 +50,19 @@ STATIC_PATHS = [
     'images',
     'extra/CNAME',
     'extra/favicon.ico',
+    'js',
 ]
 
 EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
     'extra/favicon.ico': {'path': 'favicon.ico'},
+}
+
+GITHUB_FETCH_URLS = {
+    'astar.js':'https://raw.github.com/ebenpack/laboratory/master/JS/astar/js/main.js',
+    'boltzmann.js':'https://raw.github.com/ebenpack/laboratory/master/JS/boltzmann/js/boltzmann-min.js',
+    'gameoflife.js':'https://raw.github.com/ebenpack/laboratory/master/JS/gameoflife/js/main.js',
+    'wavybits.js':'https://raw.github.com/ebenpack/laboratory/master/JS/projectwavybits/wavybits-compiled.js'
 }
 
 DEFAULT_PAGINATION = 10

@@ -14,4 +14,4 @@ Status: hidden
         <label>Speed<input id="speed" type="range" min="1" max="100" value="50"></label>
     </div>
 </div>
-<script src="https://rawgithub.com/ebenpack/laboratory/master/JS/gameoflife/js/main.js"></script>
+<script src="{filename}/js/gameoflife.js"></script>

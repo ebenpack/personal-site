@@ -10,4 +10,4 @@ Status: hidden
     <canvas id="map" style="background-color: black;" width='600' height='240'></canvas>
     <canvas id="particles" style="position: absolute; left: 0; top:0;" width='600' height='240'></canvas>
 </div>
-<script src="https://rawgithub.com/ebenpack/laboratory/master/JS/astar/js/main.js"></script>
+<script src="{filename}/js/astar.js"></script>
