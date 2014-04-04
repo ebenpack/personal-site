@@ -40,7 +40,4 @@ Status: hidden
     </div>
     <div id="debug"></div>
 </div>
-<script src="{filename}/js/boltz-init.js"></script>
-<script src="{filename}/js/boltz-draw.js"></script>
-<script src="{filename}/js/boltz-events.js"></script>
-<script src="{filename}/js/boltz-main.js"></script>
+<script src="{filename}/js/boltzmann.js"></script>
