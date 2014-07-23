@@ -33,6 +33,20 @@ Authors: ebenpack
 </div>
 <div class="project">
     <div class="title">
+        <h3><a href="{filename}/pages/projects/wireframe.markdown">Wireframe</a></h3>
+    </div>
+    <div class="image">
+        <a href="{filename}/pages/projects/lattice-boltzmann.markdown"><img src="{filename}/images/wireframe.gif" alt="Wireframe"></a>
+    </div>
+    <div class="languages">
+        JavaScript 
+    </div>
+    <div class="summary">
+        A 3d software engine.
+    </div>
+</div>
+<div class="project">
+    <div class="title">
         <h3><a href="{filename}/pages/projects/game-of-life.markdown">Conway's Game of Life</a></h3>
     </div>
     <div class="image">

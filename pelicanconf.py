@@ -62,7 +62,9 @@ GITHUB_FETCH_URLS = {
     'astar.js':'https://raw.github.com/ebenpack/laboratory/master/JS/astar/js/main.js',
     'boltzmann.js':'https://raw.github.com/ebenpack/laboratory/master/JS/boltzmann/js/boltzmann-min.js',
     'gameoflife.js':'https://raw.github.com/ebenpack/laboratory/master/JS/gameoflife/js/main.js',
-    'wavybits.js':'https://raw.github.com/ebenpack/laboratory/master/JS/projectwavybits/wavybits-compiled.js'
+    'wavybits.js':'https://raw.github.com/ebenpack/laboratory/master/JS/projectwavybits/wavybits-compiled.js',
+    'wireframe.js':'https://raw.github.com/ebenpack/wireframe/master/build/wireframe.js',
+    'wireframe.demo.js':'https://raw.github.com/ebenpack/wireframe/master/demo.js'
 }
 
 DEFAULT_PAGINATION = 10
