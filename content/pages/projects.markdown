@@ -36,7 +36,7 @@ Authors: ebenpack
         <h3><a href="{filename}/pages/projects/wireframe.markdown">Wireframe</a></h3>
     </div>
     <div class="image">
-        <a href="{filename}/pages/projects/lattice-boltzmann.markdown"><img src="{filename}/images/wireframe.gif" alt="Wireframe"></a>
+        <a href="{filename}/pages/projects/wireframe.markdown"><img src="{filename}/images/wireframe.gif" alt="Wireframe"></a>
     </div>
     <div class="languages">
         JavaScript 
