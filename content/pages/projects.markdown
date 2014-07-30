@@ -50,7 +50,7 @@ Authors: ebenpack
         <h3><a href="{filename}/pages/projects/vu.markdown">VU</a></h3>
     </div>
     <div class="image">
-        <a href="{filename}/pages/projects/vu.markdown"><img src="{filename}/images/wireframe.gif" alt="Wireframe"></a>
+        <a href="{filename}/pages/projects/vu.markdown"><img src="{filename}/images/vu.gif" alt="VU"></a>
     </div>
     <div class="languages">
         JavaScript 

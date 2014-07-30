@@ -51,6 +51,7 @@ STATIC_PATHS = [
     'extra/CNAME',
     'extra/favicon.ico',
     'js',
+    'audio',
 ]
 
 EXTRA_PATH_METADATA = {
@@ -64,7 +65,8 @@ GITHUB_FETCH_URLS = {
     'gameoflife.js':'https://raw.github.com/ebenpack/laboratory/master/JS/gameoflife/js/main.js',
     'wavybits.js':'https://raw.github.com/ebenpack/laboratory/master/JS/projectwavybits/wavybits-compiled.js',
     'wireframe.js':'https://raw.github.com/ebenpack/wireframe/master/build/wireframe.js',
-    'wireframe.demo.js':'https://raw.github.com/ebenpack/wireframe/master/demo.js'
+    'wireframe.demo.js':'https://raw.github.com/ebenpack/wireframe/master/demo.js',
+	'vu.demo.js':'https://raw.github.com/ebenpack/laboratory/master/JS/vu/demo.js'
 }
 
 DEFAULT_PAGINATION = 10

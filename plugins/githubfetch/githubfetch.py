@@ -31,8 +31,7 @@ def fetch(pelican):
         try:
             download_file(url_list[url], url, path)
         except:
-            logger.warning('`assets` failed to load dependency `webassets`.'
-                       '`assets` plugin not loaded.')
+            logger.warning('`githubfetch` failed to download file {}'.format(url))
 
 def register():
     signals.initialized.connect(fetch)
