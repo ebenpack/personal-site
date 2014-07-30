@@ -7,6 +7,9 @@ Description: A 3d sound visualizer.
 Status: hidden
 
 <canvas id="canvas" width="600px" height="400px" style="background-color:black;"></canvas>
-<audio id="audio" src="{filename}/audio/piano-sonata-no13.ogg" preload="auto" controls></audio>
+<audio id="audio" preload="auto" controls>
+  <source src="{filename}/audio/piano-sonata-no13.ogg" type="audio/ogg" />
+  <source src="{filename}/audio/piano-sonata-no13.mp3" type="audio/mpeg" />
+</audio>
 <script src="{filename}/js/wireframe.js"></script>
 <script src="{filename}/js/vu.demo.js"></script>
