@@ -3,8 +3,8 @@ Tags: JavaScript
 Slug: too-much-recursion
 Date: 2014-07-30 21:00
 Authors: ebenpack
-Description: Q&#58; Does mergesort recursion goes too deep for the language to handle? A&#58; No.
-Summary: Q&#58; Does mergesort recursion goes too deep for the language to handle? A&#58; No.
+Description: In this post we tear apart the claim, made in the new O'Reilly book 'Data Structures and Algorithms in JavaScript', that 'it is not possible to [implement Mergesort as a recursive algorithm] in JavaScript, as the recursion goes too deep for the language to handle'.
+Summary: In this post we tear apart the claim, made in the new O'Reilly book 'Data Structures and Algorithms in JavaScript', that 'it is not possible to [implement Mergesort as a recursive algorithm] in JavaScript, as the recursion goes too deep for the language to handle'.
 
 I was reading 'Data Structures and Algorithms in JavaScript' by Michael McMillan the other day. While the book as a whole is absolutely riddled with errors, this passage struck me as being particularly egregious.
 
@@ -16,13 +16,13 @@ To see why this is such a patently absurd claim, we must first establish a few f
 
 The next fact we need to establish is how large can a JavaScript array be? This is a lot more straightforward than the stack depth. The ECMA standard clearly defines the maximum length of an array to be 2<sup>32</sup>-1, or 4,294,967,295. Which is just a hair north of 4 billion. That's a very large array.
 
-So, now that we've sorted out our facts, why is McMillan's claim so absurd? To understand that, we need to take a closer look at mergesort. Mergesort is a textbook divide-and-conquer algorithm. It works by splitting an array in half, then calling mergesort recursively on each half until it reaches the base case. Then it merges each half back together such that the result is sorted. For any given array of sufficient size, mergesort will be called twice, Once on the lower half, and once on the upper half. For each of those halves, mergesort will then potentially be called twice again, and so on.
+So, now that we've sorted out our facts, why is McMillan's claim so absurd? To understand that, we need to take a closer look at mergesort. Mergesort is a textbook divide-and-conquer algorithm. It works by splitting an array in half, then calling mergesort recursively on each half until it reaches the base case. Then it merges each half back together such that the result is sorted. For any given array of sufficient size, mergesort will be called twice, once on the lower half, and once on the upper half. For each of those halves, mergesort will then potentially be called twice again, and so on.
 
 It should be evident that the number of times an array can be divided in half will be log<sub>2</sub>(n). Not coincidentally, this is the maximum recursive depth mergesort will reach. Put another way, mergesort will reach a recursive depth of n when called on an array of length 2<sup>n</sup>. It follows from this that, given our maximum array length, the maximum recursive depth that mergesort can possibly reach is 32 calls deep (maybe 33 if you count the original call). This is nowhere close to reaching even the shallowest possible stack depth.
 
-I quickly knocked up a recursive mergesort implementation (which I am including below) and set it to work sorting ever larger arrays. My implementation (which I'm sure leaves much room for improvement) crapped out after trying to sort an array of 2<sup>25</sup> items. Not because of what Firefox rather endearingly refers to as "too much recursion", but rather because it takes a heck of a lot of work to sort an array with tens of millions of items. Heck, forget sorting, Chrome wouldn't even let me push more than 2<sup>26</sup> items into an array. So, while it's true that mergesort in JavaScript might have some trouble with arrays of 2<sup>25</sup> items, this has nought to do with the depth of recursion or the call stack. And anyway, why are you trying to sort an array with 2<sup>25</sup> items? Why do you even have an array with 2<sup>25</sup> items? Either way, I doubt McMillan had such large arrays in mind when he made his ridiculous claim.
+I quickly knocked up a recursive mergesort implementation (which I am including below) and set it to work sorting ever larger arrays. My implementation (which I'm sure leaves much room for improvement) crapped out after trying to sort an array of 2<sup>25</sup> items. Not because of what Firefox rather endearingly refers to as "too much recursion", but rather because it takes a heck of a lot of work to sort an array with tens of millions of items. Heck, forget sorting, Chrome wouldn't even let me push more than 2<sup>26</sup> items into an array. So, while it's true that mergesort in JavaScript might have some trouble with arrays of 2<sup>25</sup> items, this has nought to do with the depth of recursion or the call stack. I'll repeat that: any problems mergesort might have with very large arrays are wholly unrelated to the depth of recursion or the call stack, and any claims otherwise suggest a fundamental misunderstanding of either how the algorithm works, the basic fundamentals of JavaScript, or both.
 
-Just as a thought experiment, though, how large would an array actually need to be to reach or exceed the stack depth of, say, IE6? If you recall, IE6 has a stack depth of ~1,000. Let's just call it 1,000 even. As we demonstrated, in order to reach this recursive depth with mergesort, the array would have to have a length of 2<sup>1,000</sup>. In base-10 this is ~10<sup>301</sup>, this translates to a one followed by 301 other numbers. Here's the actual number:
+Just as a thought experiment, though, how large would an array actually need to be to reach or exceed the stack depth of, say, IE6? If you recall, IE6 has a stack depth of ~1,000. Let's just call it 1,000 even. As we demonstrated, in order to reach this recursive depth with mergesort, the array would have to have a length of 2<sup>1,000</sup>. In base-10 this is ~10<sup>301</sup>. This translates to a one followed by 301 other numbers. It looks exactly like this:
 
     10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376
 
@@ -39,10 +39,17 @@ While this certainly is one of the more flagrant errors in the book, it is just 
 Anyway, here's some code:
 
     #!javascript
+    // The number of stack traces that will be logged in the console.
+    // We call console.log() when we reach the base case in our
+    // mergesort function, which will be the maximum recursive depth.
+    // We're only going to call this the first few times, as
+    // it can really bog things down otherwise.
+    var stacktraces = 0;
+
     // The array we will be sorting.
     var big_array = [];
 
-    // Build our array with numbers goins in descending order.
+    // Build our array with numbers going in descending order.
     // The array size, max, can be larger, but things slow down 
     // and start to get wonky at about 2^25.
     var max = Math.pow(2, 20);
@@ -52,6 +59,7 @@ Anyway, here's some code:
 
     big_array = mergesort(big_array);
 
+    // Standard merge
     function merge(a,b){
         var result = [];
         var alen = a.length;
@@ -79,14 +87,22 @@ Anyway, here's some code:
         return result;
     }
 
+    // Standard recursive mergesort
     function mergesort(lst){
         var length = lst.length;
         if (length <= 1){
+            if (stacktraces < 10){
+                // This will print a call stack to the console the
+                // first ten times our mergesort reaches the base case.
+                // It should be clear that the maximum recursive depth
+                // of our mergesort function is n+1, where our array
+                // has on the order of 2^n items.
+                console.trace()
+                stacktraces++;
+            }
             return lst;
         }
-        // split in half
         var q = Math.floor(length/2)
-        // recursive sorts
         var left = mergesort(lst.slice(0,q));
         var right = mergesort(lst.slice(q));
         return merge(left, right);
