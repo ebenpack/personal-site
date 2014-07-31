@@ -16,23 +16,23 @@ To see why this is such a patently absurd claim, we must first establish a few f
 
 The next fact we need to establish is how large can a JavaScript array be? This is a lot more straightforward than the stack depth. The ECMA standard clearly defines the maximum length of an array to be 2<sup>32</sup>-1, or 4,294,967,295. Which is just a hair north of 4 billion. That's a very large array.
 
-Mergesort works by splitting an array in half, then calling mergesort recursively on each half until it reaches the base case. Then it merges each half back together such that the result is sorted. Mergesort is a textbook divide-and-conquer algorithm. It should be evident that the number of times an array can be divided in half will be log<sub>2</sub>(n). Not coincidentally, this is the maximum recursive depth mergesort will reach. It follows from this that, given our maximum array length, the maximum recursive depth that mergesort can possibly reach is 32 calls deep (maybe 33 if you count the original call). This is nowhere close to reaching even the shallowest possible stack depth.
+Mergesort works by splitting an array in half, then calling mergesort recursively on each half until it reaches the base case. Then it merges each half back together such that the result is sorted. Mergesort is a textbook divide-and-conquer algorithm. It should be evident that the number of times an array can be divided in half will be log<sub>2</sub>(n). Not coincidentally, this is the maximum recursive depth mergesort will reach. Put another way, mergesort will reach a recursive depth of n when called on an array of length 2<sup>n</sup>. It follows from this that, given our maximum array length, the maximum recursive depth that mergesort can possibly reach is 32 calls deep (maybe 33 if you count the original call). This is nowhere close to reaching even the shallowest possible stack depth.
 
-I quickly knocked up a recursive mergesort implementation (which I am including below) and set it to work sorting ever larger arrays. My implementation (which I'm sure leaves much room for improvement) crapped out after trying to sort an array of length 2<sup>25</sup>. Not because of what Firefox rather endearingly refers to as "too much recursion", but rather because it takes a heck of a lot of work to sort an array with tens of millions of items.
+I quickly knocked up a recursive mergesort implementation (which I am including below) and set it to work sorting ever larger arrays. My implementation (which I'm sure leaves much room for improvement) crapped out after trying to sort an array of 2<sup>25</sup> items. Not because of what Firefox rather endearingly refers to as "too much recursion", but rather because it takes a heck of a lot of work to sort an array with tens of millions of items. Heck, forget sorting, Chrome wouldn't even let me push more than 2<sup>26</sup> items into an array. So, while it's true that mergesort in JavaScript might have some trouble with arrays of 2<sup>25</sup> items, this has sweet Fanny Adams to do with the depth of recursion or the call stack. And anyway, why are you trying to sort an array with 2<sup>25</sup> items? Why do you even have an array with 2<sup>25</sup> items? Either way, I doubt McMillan had such large arrays in mind when he made his ridiculous claim.
 
-Just as a thought experiment, how large would an array actually need to be to reach or exceed the stack depth of, say, IE6? If you recall, IE6 has a stack depth of ~1,000. Let's call it 1,000 even. As we demonstrated, in order to reach this recursive depth with mergesort the array would have to have a length of 2<sup>1,000</sup>. In base-10 this is ~10<sup>301</sup>, this translates to a one followed by 301 other numbers. Here's the actual number:
+Just as a thought experiment, though, how large would an array actually need to be to reach or exceed the stack depth of, say, IE6? If you recall, IE6 has a stack depth of ~1,000. Let's call it 1,000 even. As we demonstrated, in order to reach this recursive depth with mergesort, the array would have to have a length of 2<sup>1,000</sup>. In base-10 this is ~10<sup>301</sup>, this translates to a one followed by 301 other numbers. Here's the actual number:
 
     10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376
 
-It's a pretty big number. It's greater than the number of atoms in the universe (there are approx. 10<sup>80</sup> atoms in the observable universe, if you were wondering). So it's actually much, much, much greater than the number of atoms in the universe. In fact, any description I could attempt to give w/r/t just how much greater than the number of atoms in the universe this number really is, would just be such a colossal understatement that it would only be an affront to large numbers in general, and indeed to the very concept of largeness. Just believe me when I say it's wowie big.
+It's a pretty big number. It's greater than the number of atoms in the universe. In case you were wondering, there are approx. 10<sup>80</sup> atoms in the observable universe. So it's actually much, much, much greater than the number of atoms in the universe. In fact, any description I could attempt to give w/r/t just how much greater than the number of atoms in the universe this number really is, would just be such a colossal understatement that it would only be an affront to large numbers, and indeed to the very concept of largeness in general. Just believe me when I say that it's wowie big.
 
-The point is, there's a good chance you're not going to be reaching the maximum call stack depth with mergesort, no matter how fervently you insist your array is above average size. I would actually go so far as to say it is completely impossible to do in JavaScript, assuming we're sorting a standard JavaScript array and we're using a well implemented mergesort function. So there's a good chance that anyone who claims that
+The point is, there's a good chance you're not going to be reaching the maximum call stack depth with mergesort, even if you really, really believe your array is well above average size. I would actually go so far as to say it is completely impossible to exceed the stack depth with mergesort in JavaScript, assuming you're sorting a standard JavaScript array and you're using a well implemented mergesort function. So there's a good chance that anyone who claims that
 
 > It is not possible to [implement Mergesort as a recursive algorithm] in JavaScript, as the recursion goes too deep for the language to handle.
 
-might not know what they're talking about.
+might not know what they're talking about. Like, at all.
 
-While this certainly is one of the more flagrant errors in the book, it is far from the only one. Steer clear of this book. I'm actually kind of surprised at the low quality of this book. I expect a lot more from O'Reilly.
+While this certainly is one of the more flagrant errors in the book, it is just one of many. If you're on the fence about getting this book, I would recommend you give it a pass.
 
 Anyway, here's some code:
 
@@ -48,7 +48,7 @@ Anyway, here's some code:
         big_array.push(max - i);
     }
 
-    foo = mergesort(foo);
+    big_array = mergesort(big_array);
 
     function merge(a,b){
         var result = [];
