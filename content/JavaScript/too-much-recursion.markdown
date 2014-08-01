@@ -3,8 +3,8 @@ Tags: JavaScript
 Slug: too-much-recursion
 Date: 2014-07-30 21:00
 Authors: ebenpack
-Description: In this post we tear apart the claim, made in the new O'Reilly book 'Data Structures and Algorithms in JavaScript', that 'it is not possible to [implement Mergesort as a recursive algorithm] in JavaScript, as the recursion goes too deep for the language to handle'.
-Summary: In this post we tear apart the claim, made in the new O'Reilly book 'Data Structures and Algorithms in JavaScript', that 'it is not possible to [implement Mergesort as a recursive algorithm] in JavaScript, as the recursion goes too deep for the language to handle'.
+Description: In which the author tears apart the claim, made in the new O'Reilly book 'Data Structures and Algorithms in JavaScript', that 'it is not possible to [implement Mergesort as a recursive algorithm] in JavaScript, as the recursion goes too deep for the language to handle'.
+Summary: In which the author tears apart the claim, made in the new O'Reilly book 'Data Structures and Algorithms in JavaScript', that 'it is not possible to [implement Mergesort as a recursive algorithm] in JavaScript, as the recursion goes too deep for the language to handle'.
 
 I was reading 'Data Structures and Algorithms in JavaScript' by Michael McMillan the other day. While the book as a whole is absolutely riddled with errors, this passage struck me as being particularly egregious.
 
