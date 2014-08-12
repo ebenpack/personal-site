@@ -61,7 +61,7 @@ EXTRA_PATH_METADATA = {
 
 GITHUB_FETCH_URLS = {
     'astar.js':'https://raw.github.com/ebenpack/laboratory/master/JS/astar/js/main.js',
-    'boltzmann.js':'https://raw.github.com/ebenpack/laboratory/master/JS/boltzmann/js/boltzmann-min.js',
+    'boltzmann.js':'https://raw.githubusercontent.com/ebenpack/laboratory/master/JS/boltzmann/build/boltzmann.min.js',
     'gameoflife.js':'https://raw.github.com/ebenpack/laboratory/master/JS/gameoflife/js/main.js',
     'wavybits.js':'https://raw.github.com/ebenpack/laboratory/master/JS/projectwavybits/wavybits-compiled.js',
     'wireframe.js':'https://raw.github.com/ebenpack/wireframe/master/build/wireframe.js',
