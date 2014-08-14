@@ -11,5 +11,8 @@ Status: hidden
   <source src="{filename}/audio/piano-sonata-no13.ogg" type="audio/ogg" />
   <source src="{filename}/audio/piano-sonata-no13.mp3" type="audio/mpeg" />
 </audio>
+<div>
+    <p>The web audio API isn't very well supported at the moment, so this demo works best in Chrome. Firefox does work, but it may require a refresh.</p>
+</div>
 <script src="{filename}/js/wireframe.js"></script>
 <script src="{filename}/js/vu.demo.js"></script>
