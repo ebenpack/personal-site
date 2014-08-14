@@ -11,3 +11,8 @@ Status: hidden
     <canvas id="particles" style="position: absolute; left: 0; top:0;" width='600' height='240'></canvas>
 </div>
 <script src="{filename}/js/astar.js"></script>
+<script>
+    (function(){
+        var maze = new Maze("map", "particles");
+    })();
+</script>
