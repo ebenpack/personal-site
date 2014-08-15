@@ -516,7 +516,7 @@ After streaming, with the no-slip condition, each of those distributions are sti
     </svg>
 </div>
 
-The no-slip condition is a bit more complicated in terms of implementation. In the example below, we start as before, with three distribution functions of three different nodes, all headed in the same direction towards a boundary.
+Boundary slip is a bit more complicated in terms of implementation. In the example below, we start as before, with three distribution functions of three different nodes, all headed in the same direction towards a boundary.
     
 <div id="bounce-start-illustration">
     <svg width="200" height="200" viewbox="0 0 1020 1020">
@@ -704,7 +704,7 @@ And that's really more or less all that's required at the most basic level. Of c
 
 It took rather a long time to arrive at a proper implementation of the LBM. Not having any prior experience with computational fluid dynamics, I was learning the material as I was trying to code it. There were a lot of missteps, as I didn't fully understand the topic, but attempting to code implementations as I learned certainly helped to concretize the material.
 
-One of the biggest bugbears on this project was related to the coordinate system. The literature on the topic naturally presents examples and equations in the standard Cartesian coordinate system (i.e. with the origin at the bottom left, with x increasing as you move left, and y increasing as you move up). However, computer graphics typically place the origin at the top left (i.e. x increasing as you move right, and y increasing as you move down). This is how the canvas behaves. This was the source of a subtle and pernicious bug, where I had failed to translate between these coordinate systems in a single equation. The program appeared to behave mostly correctly, but upon close inspection exhibited odd, incorrect behavior. At this point, where this bug has been (I hope) thoroughly squashed, I am not planning on re-engineering the program, but if I were to build this from scratch, knowing what I now know, I would try to find a way to design the program with a single point of failure for this issue, instead of translating between the coordinate systems every time something happens on the y-axis.
+One of the biggest bugbears on this project was related to the coordinate system. The literature on the topic naturally presents examples and equations in the standard Cartesian coordinate system (i.e. with the origin at the bottom left, with x increasing as you move right, and y increasing as you move up). However, computer graphics typically place the origin at the top left (i.e. x increasing as you move right, and y increasing as you move down). This is how the canvas behaves. This was the source of a subtle and pernicious bug, where I had failed to translate between these coordinate systems in a single equation. The program appeared to behave mostly correctly, but upon close inspection exhibited odd, incorrect behavior. At this point, where this bug has been (I hope) thoroughly squashed, I am not planning on re-engineering the program, but if I were to build this from scratch, knowing what I now know, I would try to find a way to design the program with a single point of failure for this issue, instead of translating between the coordinate systems every time something happens on the y-axis.
 
 ### Optimizations and improvements ##
 
