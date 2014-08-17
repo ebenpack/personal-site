@@ -12,7 +12,6 @@ Status: hidden
 </div>
 <div>
     <p>Click on the canvas to give it focus. Move with WASDRF keys. Look around with QETG.</p>
-    <p>N.B. The web audio API isn't very well supported at the moment, so this demo works best in Chrome. Firefox does work, but it may require a refresh.</p>
 </div>
 <script src="{filename}/js/wireframe.js"></script>
 <script src="{filename}/js/vu.demo.js"></script>
