@@ -8,7 +8,7 @@
 
 {%- block content %}
       <h1>Tags</h1>
-      <ul id="tag-cloud">
+      <ul id="tag-cloud" class="tag-cloud">
       {% for tag, articles in tags %}
       <li data-count="{{ articles|count }}" title="{{ articles|count }} article(s)"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
       {% endfor %}
