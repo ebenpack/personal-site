@@ -448,7 +448,7 @@ The new equilibrium values after collision are calculated with the following equ
 
 There are many options for handling boundary conditions, but for the sake of brevity we will only discuss a few of the highlights. One of the most important distinctions with boundary conditions is between slip and no-slip conditions. These describe the behavior of the fluid at the interface between fluid and solid boundary. The slip condition represents a non-zero relative velocity between the fluid and the boundary, while no-slip represents a zero velocity at the boundary.
 
-In terms of implementation in a lattice Boltzmann simulation, these two boundnary conditions would look like this: in this example, before streaming, we have three distribution functions of three different nodes, all with the same velocity. If boundary conditions were ignored, after streaming, each of these DFs would land within a boundary.
+In terms of implementation in a lattice Boltzmann simulation, these two boundary conditions would look like this: in this example, before streaming, we have three distribution functions of three different nodes, all with the same velocity. If boundary conditions were ignored, after streaming, each of these DFs would land within a boundary.
 
 <div id="bounce-start-illustration">
     <svg width="200" height="200" viewbox="0 0 1020 1020">
@@ -482,7 +482,7 @@ In terms of implementation in a lattice Boltzmann simulation, these two boundnar
     </svg>
 </div>
 
-After streaming, with the no-slip condition, each of those distributions are still headed in the same direction, although they are now travelling in the opposite direction as prior to streaming. No-slip, in essence, can be thought of as a simple reflection of the particles at the boundary. Upon encountering a boundary, a distribution is bounced back to its source node, but with an opposing velocity.
+After streaming, with the no-slip condition, each of those distributions are still headed in the same direction, although they are now traveling in the opposite direction as prior to streaming. No-slip, in essence, can be thought of as a simple reflection of the particles at the boundary. Upon encountering a boundary, a distribution is bounced back to its source node, but with an opposing velocity.
 
 <div id="bounce-no-slip-illustration">
     <svg width="200" height="200" viewbox="0 0 1020 1020">
@@ -584,7 +584,7 @@ After streaming we can see the distributions 'slip' at the boundary.
     </svg>
 </div>
 
-We can see that, although the three DFs had the same velocity before streaming (i.e. were travelling in the same direction), after they collide with the boundary, each is headed in a different direction. The direction that a DF is travelling after encountering a boundary under the slip condition, then, is dependent on the orientation of that boundary.
+We can see that, although the three DFs had the same velocity before streaming (i.e. were traveling in the same direction), after they collide with the boundary, each is headed in a different direction. The direction that a DF is traveling after encountering a boundary under the slip condition, then, is dependent on the orientation of that boundary.
 
 Fortunately, not only is no-slip easier to implement, it also generally provides a more accurate simulation. It simulates the adhesion of a viscous fluid at the boundary, as if the fluid at the edge is sticking to the boundary. The no-slip condition does not hold in every situation, but for our purposes it is sufficient.
 
@@ -594,7 +594,7 @@ That more or less sums up the lattice Boltzmann method. Of course, it's very bro
 
 You can view a demo [here]({filename}/pages/projects/lattice-boltzmann.markdown).
 
-Implementation is not particularly difficult, once you understand the lattice Bolzman methods. At its most basic, the LBM requires a lattice of nodes. In this case, for D2Q9, a two-dimensional array suffices to represent our lattice (techincally, an array of length n, with each item consisting of an m length array, where n represents the width of the lattice, and m represents the height). For each node in the lattice, we must store, at a minimum, the densities of the DFs. It is also useful, in order to avoid repetition of work, to store the calculated macroscopic density, macroscopic velocity, the x and y components of that velocity, and the 'curl'. Additionally, a `barrier` boolean was stored on each node, as well as a `stream` array, used to temporarily store streamed values. Altogether, the constructor looked like this:
+Implementation is not particularly difficult, once you understand the lattice Boltzmann methods. At its most basic, the LBM requires a lattice of nodes. In this case, for D2Q9, a two-dimensional array suffices to represent our lattice (technically, an array of length n, with each item consisting of an m length array, where n represents the width of the lattice, and m represents the height). For each node in the lattice, we must store, at a minimum, the densities of the DFs. It is also useful, in order to avoid repetition of work, to store the calculated macroscopic density, macroscopic velocity, the x and y components of that velocity, and the 'curl'. Additionally, a `barrier` boolean was stored on each node, as well as a `stream` array, used to temporarily store streamed values. Altogether, the constructor looked like this:
 
     #!javascript
     function LatticeNode() {
@@ -696,7 +696,7 @@ The equilibrium function would look more or less like so:
         return eq;
     }
 
-It is possible to rewrite these functions such that much of the repetition of work is elimintated, but these are the core algorithms.
+It is possible to rewrite these functions such that much of the repetition of work is eliminated, but these are the core algorithms.
 
 And that's really more or less all that's required at the most basic level. Of course, in order to draw and interact with the lattice, and do other interesting things, a few more functions are required, and there's going to be some glue code to stick everything together, but those are mostly just implementation details.
 
@@ -734,7 +734,7 @@ This simulation started out dog-slow. Some optimizations were made here and ther
         return eq;
     }
 
-One of the most significant improvements that I made, in terms of maintainability, clarity, and extensibility, was refactoring to the module pattern. My early efforts in programming the LBM were not well designed. It can be difficult to settle on a design before you fully understand the problem at hand. But once I had come to a full understanding of the problem, and had a more-or-less working (but still poorly designed) implementation, I refactored. Well... I say refactored, but the truth is that it was a complete rewrite. They say 'write one to throw away', and that can be a major boon on a project. It certainly would have taken longer to reshape my initial design than to start from scratch, and bugs—introduced as a result of my incomplete understanding of the problem—would have almost certainly come along for the ride. This module-like architecture has also allowed for more rapid extension of the program, such as the addition of a new draw-mode, or new controls (play/pause, etc.), and overall it is far less brittle than the ad-hoc, global-ridden spaghetti-mess the prgram began as.
+One of the most significant improvements that I made, in terms of maintainability, clarity, and extensibility, was refactoring to the module pattern. My early efforts in programming the LBM were not well designed. It can be difficult to settle on a design before you fully understand the problem at hand. But once I had come to a full understanding of the problem, and had a more-or-less working (but still poorly designed) implementation, I refactored. Well... I say refactored, but the truth is that it was a complete rewrite. They say 'write one to throw away', and that can be a major boon on a project. It certainly would have taken longer to reshape my initial design than to start from scratch, and bugs—introduced as a result of my incomplete understanding of the problem—would have almost certainly come along for the ride. This module-like architecture has also allowed for more rapid extension of the program, such as the addition of a new draw-mode, or new controls (play/pause, etc.), and overall it is far less brittle than the ad-hoc, global-ridden spaghetti-mess the program began as.
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
