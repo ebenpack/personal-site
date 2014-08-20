@@ -114,7 +114,7 @@ Addendum: I was curious about the relative performance of the iterative and recu
 <div id="graph">
     <style scoped>
         path {
-            stroke-width: 1;
+            stroke-width: 3;
             fill: none;
         }
 
