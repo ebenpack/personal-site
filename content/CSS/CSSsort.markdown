@@ -7,9 +7,11 @@ Description: Sorting content with pure CSS.
 Summary: Sorting content with pure CSS.
 
 
-Prompted by the following question asked on the webdev subreddit:
+Prompted by the following question asked on reddit.com/u/webdev:
 
-> Hello, is it possible to sort something by popularity using only CSS and HTML ? Or do i need to use something else like JS etc. ? Thank you for answers. I would be really thankful if someone could provide some material that contains information about how to do it. - /u/justanewboy
+> Hello, is it possible to sort something by popularity using only CSS and HTML? Or do i need to use something else like JS etc.?
+
+> - /u/justanewboy
 
 I have devised the following solution:
 
