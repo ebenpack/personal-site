@@ -6,7 +6,7 @@ Authors: ebenpack
 Description: A 3d sound visualizer.
 Status: hidden
 
-<canvas id="canvas" width="600px" height="400px" style="background-color:black;"></canvas>
+<canvas id="canvas" width="600" height="400" style="background-color:black;"></canvas>
 <div>
     <p>Drop an audio file onto the canvas above (some <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats">filetype restrictions</a> may apply). You can also use the audio file that is loaded by default. Once the status reads 'Ready!', click the canvas to begin playback.</p>
 </div>

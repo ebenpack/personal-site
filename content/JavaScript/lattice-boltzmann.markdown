@@ -54,21 +54,8 @@ Summary: Implementing the lattice Boltzmann method with JavaScript.
                 <polygon points="345,345 335,295 295,335"></polygon>
             </g>
         </defs>
-         <defs>
-            <!-- Hatching pattern -->
-            <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="50" height="50" patternTransform="rotate(-45)">
-            <rect x="0" y="0" width="100" height="100" fill="white"/>
-            <path d="M -1,50 H 200" stroke="#000000" stroke-width="20"/>
-            </pattern>
-        </defs>
-        <defs>
-            <g id="arrow-group">
-                <line x1="0" y1="0" x2="125" y2="125" stroke-width="10"></line>
-                <polygon points="155,155 145,105 105,145"></polygon>
-            </g>
-        </defs>
     </svg>
-    <style>
+    <style scoped>
         svg .particle-arrow {
             fill: red;
             stroke: red;
@@ -162,18 +149,18 @@ Each node in the lattice consists of a set of particle DFs. Together, these DFs 
 <div id="node-distribution-illustration">
     <svg width="200" height="200" viewbox="-300 -300  1620 1620">
         <!-- Directions -->
-        <defs>
+<!--         <defs>
             <g id="arrow-group-large">
                 <line x1="0" y1="0" x2="470" y2="470" stroke-width="10"></line>
                 <polygon points="485,485 475,435 435,475"></polygon>
             </g>
-        </defs>
-        <defs>
+        </defs> -->
+<!--         <defs>
             <g id="arrow-group-large-short">
                 <line x1="0" y1="0" x2="330" y2="330" stroke-width="10"></line>
                 <polygon points="345,345 335,295 295,335"></polygon>
             </g>
-        </defs>
+        </defs> -->
         <rect class="outer" width="990" height="990" x="20" y="20" stroke="black" stroke-width="20" fill="white" />
         <!-- Ordinals -->
         <g class="arrow-3" transform="translate(515,515) rotate(0)">
@@ -450,7 +437,7 @@ There are many options for handling boundary conditions, but for the sake of bre
 
 In terms of implementation in a lattice Boltzmann simulation, these two boundary conditions would look like this: in this example, before streaming, we have three distribution functions of three different nodes, all with the same velocity. If boundary conditions were ignored, after streaming, each of these DFs would land within a boundary.
 
-<div id="bounce-start-illustration">
+<div id="bounce-start-illustration-no-slip">
     <svg width="200" height="200" viewbox="0 0 1020 1020">
         <!-- Boundary conditions, starting position -->
         <!-- First column -->
@@ -518,7 +505,7 @@ After streaming, with the no-slip condition, each of those distributions are sti
 
 Boundary slip is a bit more complicated in terms of implementation. In the example below, we start as before, with three distribution functions of three different nodes, all headed in the same direction towards a boundary.
     
-<div id="bounce-start-illustration">
+<div id="bounce-start-illustration-slip">
     <svg width="200" height="200" viewbox="0 0 1020 1020">
         <!-- Boundary conditions, starting position -->
         <!-- First column -->

@@ -7,7 +7,7 @@ Description: Conway's Game of Life made with JavaScript.
 Status: hidden
 
 <div id="game" class="game">
-    <canvas id="gol" style="border: 1px solid black;position:relative;" width='600px' height='400px'></canvas>
+    <canvas id="gol" style="border: 1px solid black;position:relative;" width='600' height='400'></canvas>
 </div>
 <script src="{filename}/js/gameoflife.js"></script>
 <script>
