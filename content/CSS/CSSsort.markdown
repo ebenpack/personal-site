@@ -22,22 +22,22 @@ I have devised the following solution:
         <meta charset="UTF-8">
         <title>Document</title>
         <style>
-            .sorted {height:20px;}
-            .sorted {position: absolute;}
-            .sorted[data-sort='1'] {top:0;}
-            .sorted[data-sort='2'] {top:20px;}
-            .sorted[data-sort='3'] {top:40px;}
-            .sorted[data-sort='4'] {top:60px;}
-            .sorted[data-sort='5'] {top:80px;}
-            .sorted[data-sort='6'] {top:100px;}
-            .sorted[data-sort='7'] {top:120px;}
-            .sorted[data-sort='8'] {top:140px;}
-            .sorted[data-sort='9'] {top:160px;}
-            .sorted[data-sort='10'] {top:180px;}
+            .container {position: relative; height: 200px;}
+            .sorted {height:20px; position: absolute;}
+            .sorted[data-sort='1']  {top: 0;}
+            .sorted[data-sort='2']  {top: 20px;}
+            .sorted[data-sort='3']  {top: 40px;}
+            .sorted[data-sort='4']  {top: 60px;}
+            .sorted[data-sort='5']  {top: 80px;}
+            .sorted[data-sort='6']  {top: 100px;}
+            .sorted[data-sort='7']  {top: 120px;}
+            .sorted[data-sort='8']  {top: 140px;}
+            .sorted[data-sort='9']  {top: 160px;}
+            .sorted[data-sort='10'] {top: 180px;}
         </style>
     </head>
     <body>
-        <div class="container" styel="position: relative; height:200px;">
+        <div class="container">
             <div class="sorted" data-sort="2">2</div>
             <div class="sorted" data-sort="3">3</div>
             <div class="sorted" data-sort="1">1</div>
@@ -45,8 +45,8 @@ I have devised the following solution:
             <div class="sorted" data-sort="4">4</div>
             <div class="sorted" data-sort="10">10</div>
             <div class="sorted" data-sort="9">9</div>
-            <div class="sorted" data-sort="8">8</div>
             <div class="sorted" data-sort="5">5</div>
+            <div class="sorted" data-sort="8">8</div>
             <div class="sorted" data-sort="7">7</div>
         </div>
     </body>
@@ -56,18 +56,17 @@ Here's an example of it in action.
 
 <div class="container" style="position: relative; height:200px; width:100%;">
     <style scoped>
-        .sorted {height:20px;}
-        .sorted {position: absolute;}
-        .sorted[data-sort='1'] {top:0;}
-        .sorted[data-sort='2'] {top:20px;}
-        .sorted[data-sort='3'] {top:40px;}
-        .sorted[data-sort='4'] {top:60px;}
-        .sorted[data-sort='5'] {top:80px;}
-        .sorted[data-sort='6'] {top:100px;}
-        .sorted[data-sort='7'] {top:120px;}
-        .sorted[data-sort='8'] {top:140px;}
-        .sorted[data-sort='9'] {top:160px;}
-        .sorted[data-sort='10'] {top:180px;}
+        .sorted {height: 20px; position: absolute;}
+        .sorted[data-sort='1']  {top: 0;}
+        .sorted[data-sort='2']  {top: 20px;}
+        .sorted[data-sort='3']  {top: 40px;}
+        .sorted[data-sort='4']  {top: 60px;}
+        .sorted[data-sort='5']  {top: 80px;}
+        .sorted[data-sort='6']  {top: 100px;}
+        .sorted[data-sort='7']  {top: 120px;}
+        .sorted[data-sort='8']  {top: 140px;}
+        .sorted[data-sort='9']  {top: 160px;}
+        .sorted[data-sort='10'] {top: 180px;}
     </style>
     <div class="sorted" data-sort="2">2</div>
     <div class="sorted" data-sort="3">3</div>
@@ -76,12 +75,12 @@ Here's an example of it in action.
     <div class="sorted" data-sort="4">4</div>
     <div class="sorted" data-sort="10">10</div>
     <div class="sorted" data-sort="9">9</div>
-    <div class="sorted" data-sort="8">8</div>
     <div class="sorted" data-sort="5">5</div>
+    <div class="sorted" data-sort="8">8</div>
     <div class="sorted" data-sort="7">7</div>
 </div>
 
-Have a look at the HTML and you'll see that these items are not represented in the markup in the order that you're seeing them on the page (assuming you're using a modern browser, and you don't have any sort of user stylesheet overriding these rules).
+Have a look at the HTML and you'll see that these items are not represented in the markup in the order that you're seeing them on the page (assuming you're using a modern browser, and you don't have any sort of user stylesheet overriding these rules). Or better yet, try to select the text and see what horrors CSS hath wrought.
 
 Of course it should go without saying that you should almost certainly never, ever do such a thing. But it's still interesting to see what CSS is capable of these days. To put it in bold letters: **CSS sort is nowhere close to cross-browser compatible, and is almost certainly inappropriate for all real-world situations**.
 
