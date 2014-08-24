@@ -7,6 +7,30 @@ Description: Implementing the lattice Boltzmann method with JavaScript.
 Summary: Implementing the lattice Boltzmann method with JavaScript.
 
 <div style="height:0">
+    <style scoped>
+        svg .particle-arrow {
+            fill: red;
+            stroke: red;
+        }
+
+        svg .arrow-1 {
+            fill: red;
+            stroke: red;
+        }
+        svg .arrow-2 {
+            fill: blue;
+            stroke: blue;
+        }
+        svg .arrow-3 {
+            fill: black;
+            stroke: black;
+        }
+
+        svg .triangle {
+            fill: black;
+            stroke: black;
+        }
+    </style>
     <svg width="0" height="0">
         <!-- Definitions -->
         <defs>
@@ -55,30 +79,6 @@ Summary: Implementing the lattice Boltzmann method with JavaScript.
             </g>
         </defs>
     </svg>
-    <style scoped>
-        svg .particle-arrow {
-            fill: red;
-            stroke: red;
-        }
-
-        svg .arrow-1 {
-            fill: red;
-            stroke: red;
-        }
-        svg .arrow-2 {
-            fill: blue;
-            stroke: blue;
-        }
-        svg .arrow-3 {
-            fill: black;
-            stroke: black;
-        }
-
-        svg .triangle {
-            fill: black;
-            stroke: black;
-        }
-    </style>
 </div>
 
 Over the 2013 winter holidays I was looking for a project to work on. I had been interested in learning more about the canvas element for a while, so, with the snow driving o’er the fields, I decided to make a simple snow simulation to start learning some canvas basics. Once I had a simple snow program up and running in the canvas, I turned my attention to implementing a wind system that would allow users to interact with the snow, creating gusts of wind with their mouse. My initial naive attempts—which mostly involved a mesh of nodes which contained a single wind vector, and some mechanism to propagate those vectors to the next node in their direction of travel—were fairly unsatisfactory, so I began to look for ways to improve the wind system. After some cursory googling, I started looking in earnest at computational fluid dynamics. This led me to the Navier-Stokes equations, which seemed just a little too complicated for what I was after. Navier-Stokes led me to lattice-gas automata (LGA), which, while conceptually quite simple, has some inherent issues. Finally, LGA led to the lattice Boltzmann methods (LBM).
