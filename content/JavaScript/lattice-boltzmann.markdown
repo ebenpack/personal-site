@@ -7,30 +7,6 @@ Description: Implementing the lattice Boltzmann method with JavaScript.
 Summary: Implementing the lattice Boltzmann method with JavaScript.
 
 <div style="height:0">
-    <style scoped>
-        svg .particle-arrow {
-            fill: red;
-            stroke: red;
-        }
-
-        svg .arrow-1 {
-            fill: red;
-            stroke: red;
-        }
-        svg .arrow-2 {
-            fill: blue;
-            stroke: blue;
-        }
-        svg .arrow-3 {
-            fill: black;
-            stroke: black;
-        }
-
-        svg .triangle {
-            fill: black;
-            stroke: black;
-        }
-    </style>
     <svg width="0" height="0">
         <!-- Definitions -->
         <defs>
