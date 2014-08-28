@@ -1,4 +1,4 @@
-Title: Computational fluid dynamics in under 1K. How I made my JS1K entry.
+Title: Computational Fluid Dynamics in Under 1K: How I Made My JS1K Entry
 Tags: JavaScript, JS1K, Lattice Boltzmann
 Slug: wavybits
 Date: 2014-02-17 12:49

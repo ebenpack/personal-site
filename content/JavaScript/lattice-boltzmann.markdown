@@ -1,4 +1,4 @@
-Title: Computational fluid dynamics made easy
+Title: Computational Fluid Dynamics Made Easy
 Tags: JavaScript, Lattice Boltzmann
 Slug: lattice-boltzmann
 Date: 2014-02-16 12:49
