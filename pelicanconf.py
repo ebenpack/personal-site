@@ -69,7 +69,7 @@ GITHUB_FETCH_URLS = {
 	'vu.demo.js':'https://raw.github.com/ebenpack/laboratory/master/JS/vu/demo.js'
 }
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
