@@ -1,5 +1,5 @@
 Title: A Load of Garbage
-Tags: JavaScript
+Tags: JavaScript, Canvas
 Slug: low-garbage-canvas
 Date: 2014-08-28 9:30
 Authors: ebenpack
