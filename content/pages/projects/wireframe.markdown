@@ -13,6 +13,7 @@ Status: hidden
     <div id="controls">
         <button id="toggledraw">Toggle draw mode</button>
         <button id="togglebfcull">Toggle backface culling</button>
+        <button id="toggleqdraw">Toggle quickdraw mode</button>
     </div>
 </div>
 
