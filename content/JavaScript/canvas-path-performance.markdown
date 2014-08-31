@@ -160,3 +160,5 @@ What this code is doing is drawing paths to the canvas with increasingly many su
 </svg>
 
 The takeaway, it would seem, is that you may see performance drop off precipitously in some browsers when the number of subpaths in your path reaches or exceeds ~600. In order to work around this issue, paths should be periodically drawn and closed. In other words, paths should not be fully batched together, but should be batched into chunks. Experimentation has shown that keeping subpaths to <200 provides relatively good performance.
+
+Addendum: Further testing suggests this issue is not widespread, and does not affect all versions of Firefox. Currently, these results are reproducible in Firefox 31.0 running on Arch Linux. Firefox 31.0 running on OS X 10.7 does not produce similar results. Further testing is required to determine the nature of the issue.
