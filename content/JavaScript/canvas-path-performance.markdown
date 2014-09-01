@@ -56,7 +56,7 @@ The following test method was used in order to obtain quantitative data to inves
                     ctx.clearRect(0,0,600,600);
                     var start = performance.now();
                     ctx.beginPath();
-                    for (var j=0;j<i;j++){
+                    for (var j=0; j<i; j++){
                         ctx.moveTo(0, j);
                         ctx.lineTo(j, 0);
                     }
@@ -166,6 +166,6 @@ What this code is doing is drawing paths to the canvas with increasingly many su
     </g>
 </svg>
 
-The takeaway, it would seem, is that you may see performance drop off precipitously in some browsers when the number of subpaths in your path reaches or exceeds ~600. In order to work around this issue, paths should be periodically drawn and closed. In other words, paths should not be fully batched together, but should be batched into chunks. Experimentation has shown that keeping subpaths to <200 provides relatively good performance.
+The takeaway, it would seem, is that you may see performance drop off precipitously in some browsers when the number of subpaths in your path reaches or exceeds ~600. If you encounter this issue, in order to work around it, paths should be periodically drawn and closed. In other words, paths should not be fully batched together, but should be batched into chunks. Experimentation has shown that keeping subpaths to <200 provides relatively good performance.
 
-Addendum: Further testing suggests this issue is not very widespread at all, and does not affect all versions of Firefox. Currently, these results are reproducible in Firefox 31.0 running on Arch Linux. Firefox 31.0 running on OS X 10.7 does not produce similar results. Further testing is required to determine the exact nature of the issue.
+Addendum: Further testing suggests this issue is not very widespread at all, and does not affect all versions of Firefox. Currently, these results are reproducible in Firefox 31.0 running on Arch Linux. Firefox 31.0 running on OS X 10.7 does not produce similar results. After further investigation, this sounds like it may be an issue with [cairo](https://bugzilla.mozilla.org/show_bug.cgi?id=703281).
