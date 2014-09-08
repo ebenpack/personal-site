@@ -1952,7 +1952,7 @@ var EventTarget = {
     /**
      * @method
      * @param {string} type Type of event to be added.
-     * @param {function} listener Function to be called when event is fired.
+     * @param {function()} listener Function to be called when event is fired.
      */
     addListener: function(type, listener){
         if (!(type in this._listeners)) {
@@ -1982,7 +1982,7 @@ var EventTarget = {
     /**
      * @method
      * @param  {string} type
-     * @param  {function} listener
+     * @param  {function()} listener
      */
     removeListener: function(type, listener){
         var listeners = this._listeners[type];
