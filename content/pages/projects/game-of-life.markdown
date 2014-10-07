@@ -1,5 +1,5 @@
 Title: Conway's Game of Life
-Slug: projects/game-of-life
+Slug: pages/projects/game-of-life
 Tags: JavaScript
 Date: 2014-02-15 20:28
 Authors: ebenpack

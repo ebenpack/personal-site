@@ -18,6 +18,9 @@ DEFAULT_DATE = u'fs'
 ARTICLE_URL = "posts/{slug}.html"
 ARTICLE_SAVE_AS = "posts/{slug}.html"
 
+PAGE_URL = '{slug}.html'
+PAGE_SAVE_AS = '{slug}.html'
+
 THEME = "./pelican-themes/dev-random2"
 
 # Feed generation is usually not desired when developing

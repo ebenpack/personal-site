@@ -1,5 +1,5 @@
 Title: Wireframe
-Slug: projects/wireframe
+Slug: pages/projects/wireframe
 Tags: JavaScript
 Date: 2014-07-22 15:15
 Authors: ebenpack

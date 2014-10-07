@@ -1,5 +1,5 @@
 Title: Lattice Boltzmann
-Slug: projects/lattice-boltzmann
+Slug: pages/projects/lattice-boltzmann
 Tags: JavaScript
 Date: 2014-02-15 20:28
 Authors: ebenpack

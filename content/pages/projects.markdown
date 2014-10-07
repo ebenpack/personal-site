@@ -1,5 +1,5 @@
 Title: Projects
-Slug: projects
+Slug: pages/projects
 Date: 2014-02-15 20:28
 Authors: ebenpack
 

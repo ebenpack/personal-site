@@ -1,5 +1,5 @@
 Title: VU
-Slug: projects/vu
+Slug: pages/projects/vu
 Tags: JavaScript
 Date: 2014-07-29 17:18
 Authors: ebenpack

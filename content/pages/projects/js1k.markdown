@@ -1,5 +1,5 @@
 Title: JS1K Lattice Boltzmann
-Slug: projects/js1k
+Slug: pages/projects/js1k
 Tags: JavaScript
 Date: 2014-02-15 20:28
 Authors: ebenpack

@@ -1,5 +1,5 @@
 Title: A*
-Slug: projects/a-star
+Slug: pages/projects/a-star
 Tags: JavaScript
 Date: 2014-02-15 20:28
 Authors: ebenpack
