@@ -10,10 +10,10 @@ If you've done much work with the HTML5 canvas API, and especially if you've eve
 
     #!javascript
     ctx.beginPath();
-    for (line in lineArray){
+    lineArray.forEach(function(line){
         ctx.moveTo(line.startx, line.starty);
         ctx.lineTo(line.endx, line.endy);
-    }
+    });
     // Draw all lines at once.
     ctx.stroke();
     ctx.closePath();
@@ -21,14 +21,14 @@ If you've done much work with the HTML5 canvas API, and especially if you've eve
 is preferable to this:
 
     #!javascript
-    for (line in lineArray){
+     lineArray.forEach(function(line){
         ctx.beginPath();
         ctx.moveTo(line.startx, line.starty);
         ctx.lineTo(line.endx, line.endy);
         // Draw each line individually.
         ctx.stroke();
         ctx.closePath();
-    }
+    });
 
 As I recently discovered, however, this does not always hold true. Performance in certain browsers actually degrades very quickly as the number of subpaths increases above a certain threshold. More information about how different browsers perform can be found at this [jsperf](http://jsperf.com/canvas-path-performance/2).
 
