@@ -15,7 +15,6 @@ Status: hidden
      (function(){
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');
-        var video = document.createElement('video');
 
         // Prepare canvas and display instruction
         canvas.style.border = "4px dashed gray";
@@ -23,13 +22,13 @@ Status: hidden
         ctx.font="14pt Arial"; 
         ctx.fillText("Drop video files here to asciify", 150, 150); 
 
-        function make_ascii(canvas, video){
+        function make_ascii(canvas, videoSrc){
             // canvas.width = video.width;
             // canvas.height = video.height;
             canvas.style.border = "";
             videoascii({
                 canvas: canvas,
-                video: video,
+                videoSrc: videoSrc,
                 font_size: 8,
                 monochrome: false,
                 autoplay: true
@@ -48,8 +47,8 @@ Status: hidden
                 if (typeof FileReader !== "undefined" && file.type.indexOf("video") != -1) {
                     var reader = new FileReader();
                     reader.onload = function (evt) {
-                        video.src = evt.target.result;
-                        make_ascii(canvas, video);
+                        var videoSrc = evt.target.result;
+                        make_ascii(canvas, videoSrc);
                     };
                 reader.readAsDataURL(file);
                 }
