@@ -1,0 +1,16 @@
+{
+  "name": "site",
+  "version": "0.0.1",
+  "description": "Package for site scripts",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebenpack/personal-site.git"
+  },
+  "author": "ebenpack",
+  "license": "MIT",
+  "dependencies": {
+    "wireframe":"git://github.com/ebenpack/wireframe.js#master",
+    "videoascii":"git://github.com/ebenpack/videoascii.js#master"
+  }
+}
