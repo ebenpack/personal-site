@@ -13,4 +13,7 @@ Status: hidden
   var c = a.getContext('2d');
   a.width = a.height = 600;
 </script>
-<script src="{filename}/js/wavybits.js"></script>
+<script src="{filename}/js/bundle.js"></script>
+<script>
+    main.projectwavybits();
+</script>

@@ -13,5 +13,8 @@ Status: hidden
 <div>
     <p>Click on the canvas to give it focus. Move with WASDRF keys. Look around with QETG.</p>
 </div>
-<script src="{filename}/js/wireframe.js"></script>
-<script src="{filename}/js/vu.demo.js"></script>
+
+<script src="{filename}/js/bundle.js"></script>
+<script>
+    main.vu();
+</script>

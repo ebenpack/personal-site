@@ -1,5 +1,8 @@
-var videoascii = require('videoascii');
-var wifreframe = require('wireframe');
 
-exports.videoascii = videoascii;
-exports.wifreframe = wifreframe;
+exports.astar = require('astar');
+exports.wireframe = require('wireframe');
+exports.videoascii = require('videoascii');
+exports.boltzmann = require('boltzmann');
+exports.vu = require('vu');
+exports.conway = require('conway');
+exports.projectwavybits = require('projectwavybits');

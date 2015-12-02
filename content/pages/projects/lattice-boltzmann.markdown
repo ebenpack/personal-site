@@ -40,9 +40,9 @@ Status: hidden
 </div>
 <div id="debug"></div>
 </div>
-<script src="{filename}/js/boltzmann.js"></script>
+<script src="{filename}/js/bundle.js"></script>
 <script>
-boltzman({
+main.boltzmann({
     boltzId: "boltzmann",
     latticeWidth: 200,
     latticeHeight: 80,

@@ -10,7 +10,7 @@ Status: hidden
     Sorry, this browser does not support canvas.
 </canvas>
 
-<script src="{filename}/js/videoascii.js"></script>
+<script src="{filename}/js/bundle.js"></script>
 <script>
      (function(){
         var canvas = document.getElementById('canvas');
@@ -24,7 +24,7 @@ Status: hidden
 
         function make_ascii(canvas, videoSrc){
             canvas.style.border = "";
-            videoascii({
+            main.videoascii({
                 canvas: canvas,
                 output_width: canvas.parentElement.offsetWidth,
                 videoSrc: videoSrc,

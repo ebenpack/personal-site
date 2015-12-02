@@ -10,9 +10,9 @@ Status: hidden
     <canvas id="map" style="background-color: black;" width='600' height='240'></canvas>
     <canvas id="particles" style="position: absolute; left: 0; top:0;" width='600' height='240'></canvas>
 </div>
-<script src="{filename}/js/astar.js"></script>
+<script src="{filename}/js/bundle.js"></script>
 <script>
     (function(){
-        var maze = new Maze("map", "particles");
+        var maze = new main.astar("map", "particles");
     })();
 </script>
