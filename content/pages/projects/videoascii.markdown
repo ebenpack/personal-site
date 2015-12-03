@@ -9,11 +9,15 @@ Status: hidden
 <canvas id="canvas" width="300" height="300">
     Sorry, this browser does not support canvas.
 </canvas>
+<button id="start">Start</button><button id="pause">Pause</button><button id="restart">Restart</button>
 
 <script src="{filename}/js/bundle.js"></script>
 <script>
-     (function(){
+    (function(){
         var canvas = document.getElementById('canvas');
+        var start = document.getElementById('start');
+        var pause = document.getElementById('pause');
+        var restart = document.getElementById('restart');
         var ctx = canvas.getContext('2d');
 
         // Prepare canvas and display instruction
@@ -24,15 +28,26 @@ Status: hidden
 
         function make_ascii(canvas, videoSrc){
             canvas.style.border = "";
-            main.videoascii({
+            var videoascii = main.videoascii({
                 canvas: canvas,
                 output_width: canvas.parentElement.offsetWidth,
                 videoSrc: videoSrc,
                 font_size: 8,
                 monochrome: false,
-                autoplay: true
+                autoplay: false
             });
-
+            start.addEventListener('click', function(){
+                videoascii.start();
+            });
+            pause.addEventListener('click', function(){
+                videoascii.stop();
+            });
+            restart.addEventListener('click', function(){
+                videoascii.restart();
+            });
+            window.addEventListener('resize', function() {
+                videoascii.resize(canvas.parentElement.offsetWidth);
+            });
         }
 
         // Register canvas drag 'n' drop handler
@@ -41,15 +56,11 @@ Status: hidden
         }, false);
         canvas.addEventListener("drop", function (e) {
             var files = e.dataTransfer.files;
+            var tempvid = document.createElement('video');
             if (files.length > 0) {
                 var file = files[0];
-                if (typeof FileReader !== "undefined" && file.type.indexOf("video") != -1) {
-                    var reader = new FileReader();
-                    reader.onload = function (evt) {
-                        var videoSrc = evt.target.result;
-                        make_ascii(canvas, videoSrc);
-                    };
-                reader.readAsDataURL(file);
+                if (tempvid.canPlayType(file.type)) {
+                    make_ascii(canvas, file);
                 }
             }
             e.preventDefault();
