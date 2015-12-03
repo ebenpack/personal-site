@@ -32,7 +32,7 @@ GITHUB_URL = "https://github.com/ebenpack/ebenpack.github.io"
 SOCIAL = (('GitHub', 'https://github.com/ebenpack'),)
 
 PLUGIN_PATH = "plugins"
-PLUGINS = ['sitemap', 'assets', 'githubfetch', ]
+PLUGINS = ['sitemap', 'assets', ]
 
 SITEMAP = {
     'format': 'xml',
@@ -60,17 +60,6 @@ STATIC_PATHS = [
 EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
     'extra/favicon.ico': {'path': 'favicon.ico'},
-}
-
-GITHUB_FETCH_URLS = {
-    'astar.js':'https://raw.github.com/ebenpack/laboratory/master/JS/astar/js/main.js',
-    'boltzmann.js':'https://raw.githubusercontent.com/ebenpack/laboratory/master/JS/boltzmann/src/boltzmann.js',
-    'gameoflife.js':'https://raw.github.com/ebenpack/laboratory/master/JS/gameoflife/js/main.js',
-    'wavybits.js':'https://raw.github.com/ebenpack/laboratory/master/JS/projectwavybits/wavybits-compiled.js',
-    'wireframe.js':'https://raw.github.com/ebenpack/wireframe/master/build/wireframe.js',
-    'wireframe.demo.js':'https://raw.github.com/ebenpack/wireframe/master/demo.js',
-    'videoascii.js': 'https://raw.githubusercontent.com/ebenpack/videoascii.js/master/build/videoascii.js',
-	'vu.demo.js':'https://raw.github.com/ebenpack/laboratory/master/JS/vu/demo.js'
 }
 
 DEFAULT_PAGINATION = 5
