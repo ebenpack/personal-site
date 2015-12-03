@@ -40,7 +40,7 @@ Status: hidden
                 videoascii.start();
             });
             pause.addEventListener('click', function(){
-                videoascii.stop();
+                videoascii.pause();
             });
             restart.addEventListener('click', function(){
                 videoascii.restart();
