@@ -10,6 +10,7 @@ Status: hidden
     Sorry, this browser does not support canvas.
 </canvas>
 <button id="start">Start</button><button id="pause">Pause</button><button id="restart">Restart</button>
+<label>Monochrome<input id="monochrome" type="checkbox" checked="checked"></label>
 
 <script src="{filename}/js/bundle.js"></script>
 <script>
@@ -18,6 +19,7 @@ Status: hidden
         var start = document.getElementById('start');
         var pause = document.getElementById('pause');
         var restart = document.getElementById('restart');
+        var monochrome = document.getElementById('monochrome');
         var ctx = canvas.getContext('2d');
 
         // Prepare canvas and display instruction
@@ -33,7 +35,7 @@ Status: hidden
                 output_width: canvas.parentElement.offsetWidth,
                 videoSrc: videoSrc,
                 font_size: 8,
-                monochrome: false,
+                monochrome: true,
                 autoplay: false
             });
             start.addEventListener('click', function(){
@@ -44,6 +46,9 @@ Status: hidden
             });
             restart.addEventListener('click', function(){
                 videoascii.restart();
+            });
+            monochrome.addEventListener('click', function(){
+                videoascii.toggleMonochrome();
             });
             window.addEventListener('resize', function() {
                 videoascii.resize(canvas.parentElement.offsetWidth);

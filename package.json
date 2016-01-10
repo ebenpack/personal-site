@@ -10,12 +10,13 @@
   "author": "ebenpack",
   "license": "MIT",
   "dependencies": {
-    "astar":"git://github.com/ebenpack/astar#master",
-    "wireframe":"git://github.com/ebenpack/wireframe.js#master",
-    "videoascii":"git://github.com/ebenpack/videoascii.js#master",
-    "boltzmann":"git://github.com/ebenpack/lattice-boltzmann.js#master",
+    "astar": "git://github.com/ebenpack/astar#master",
+    "boltzmann": "git://github.com/ebenpack/lattice-boltzmann.js#master",
+    "conway": "git://github.com/ebenpack/conway.js#master",
+    "lispish.js": "git://github.com/ebenpack/lispish.js.git#master",
+    "projectwavybits": "git://github.com/ebenpack/projectwavybits.js#master",
+    "videoascii": "git://github.com/ebenpack/videoascii.js#master",
     "vu": "git://github.com/ebenpack/vu.js#master",
-    "conway":"git://github.com/ebenpack/conway.js#master",
-    "projectwavybits":"git://github.com/ebenpack/projectwavybits.js#master"
+    "wireframe": "git://github.com/ebenpack/wireframe.js#master"
   }
 }

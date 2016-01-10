@@ -89,6 +89,20 @@ Authors: ebenpack
 </div>
 <div class="project">
     <div class="title">
+        <h3><a href="{filename}/pages/projects/lispish.markdown">Lispish</a></h3>
+    </div>
+    <div class="image">
+        <a href="{filename}/pages/projects/lispish.markdown"><img src="{filename}/images/lispish.png" alt="Lispish"></a>
+    </div>
+    <div class="languages">
+        JavaScript 
+    </div>
+    <div class="summary">
+        Some lisp-like noodlings in JS, by someone who doesn't really know lisp.
+    </div>
+</div>
+<div class="project">
+    <div class="title">
         <h3><a href="{filename}/pages/projects/a-star.markdown">A*</a></h3>
     </div>
     <div class="image">
