@@ -131,10 +131,10 @@ Authors: ebenpack
 </div>
 <div class="project">
     <div class="title">
-        <h3><a href="http://wiki.bennington.edu/wiki/LM3000" target="_blank">Logic Machine 3000</a></h3>
+        <h3><a href="http://wiki.bennington.edu/LM3000" target="_blank">Logic Machine 3000</a></h3>
     </div>
     <div class="image">
-        <a href="http://wiki.bennington.edu/wiki/LM3000" target="_blank"><img src="{filename}/images/LM3000.jpg" alt="LM3000"></a>
+        <a href="http://wiki.bennington.edu/LM3000" target="_blank"><img src="{filename}/images/LM3000.jpg" alt="LM3000"></a>
     </div>
     <div class="languages">
         Breadboards, integrated circuits, 50 odd meters of wire, etc.
